@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Charmonman|Crimson+Text|Josefin+Sans|Niramit|PT+Sans|Raleway|Roboto+Condensed|Roboto+Mono|Roboto:700" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Height Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="convert.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 id="h1sh">Height Converter
+                </h1>
+                <p>enter a number for converting</p>
+                <form>
+                    <div class="form-group">
+                        <input 
+                        type="number" 
+                        class="form-control" 
+                        placeholder=" Enter Centimeters..."
+                        id="lbsInput">
+
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4>Metres:</h4>
+                            <div id="gramsOutput"></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                            <div class="card-block">
+                               <h4 class="second">Inches:</h4>
+                                <div id="KgOutput"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                                <div class="card-block">
+                                    <h4 class="third">Feet:</h4>
+                                    <div id="ozOutput"></div>
+                                </div>
+                            </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("output").style.visibility = "hidden";
+
+        document.getElementById("lbsInput").addEventListener("input", function(e){
+           document.getElementById("output").style.visibility = "visible";
+           let lbs = e.target.value;
+           document.getElementById("gramsOutput").innerHTML = lbs/100 ;
+           document.getElementById("KgOutput").innerHTML = lbs/2.54 ;
+           document.getElementById("ozOutput").innerHTML = lbs/30.48;
+            
+         });
+
+    </script>
+
+    
+    
+</body>
+</html>
